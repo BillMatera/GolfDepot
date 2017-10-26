@@ -1,0 +1,11 @@
+﻿@model ClubListViewModel
+
+<h2>@Model.CurrentCategory</h2>  
+
+@{
+    foreach (Club club in Model.Clubs)
+    {
+        @Html.Partial("ClubsSummary", club)
+    }
+}
+

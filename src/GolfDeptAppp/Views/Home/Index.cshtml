@@ -1,0 +1,26 @@
+﻿@model HomeViewModel
+
+<div> 
+   <p>
+       <h2>
+           Welcome to Golf Depot!
+       </h2>
+        <h3>
+           This is your one-stop shop for all your sluggers & putters! Browse through our website where we are confident that we will provide  
+           you with all your desired needs to improve your game! Check out our promoted clubs below and enjoy your shopping experience.
+        </h3>
+    </p> 
+</div>
+<br/>
+<br/>
+
+
+<h3>Product spotlight of the week </h3>
+<h4>Promoted Clubs!</h4>
+
+<div class="row">
+    @foreach (var club in Model.PreferredClubs)
+    {
+        @Html.Partial("ClubsSummary", club)
+    }
+</div>

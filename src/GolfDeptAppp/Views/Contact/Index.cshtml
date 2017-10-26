@@ -1,0 +1,55 @@
+﻿<style>
+#map {
+            height: 300px;
+            width: 50%;
+        }
+</style>
+
+<h1>Contact us</h1>
+<p>If you have any questions please feel free to contact us:</p>
+<div class="container">
+    <div class="row">
+        
+            <div class="col-md-4" style="background-color:aliceblue; height:136px; margin-left:20px; display:inline-block; font-size:16px;">
+                <p>
+                    255 LakeField Drive <br/>
+                    Dalton, OH 44618
+                </p>
+            </div>
+
+                <div class="col-md-4 " style="background-color:aliceblue; height:136px; margin-left:200px; margin-right:20px; font-size:16px;">
+                    <p>
+                       GolfDepot@hotmail.com <br/>
+                       careersGolfDepot@hotmail.com <br/>
+                       330-745-8212
+                    </p>
+                </div>
+            </div>
+        </div>
+
+<br/>
+<br />
+<br />
+
+<div id="map" style="align-self:center"> </div>
+<script>
+        function initMap() {
+            var location = { lat: 40.804454, lng:-81.674938  };
+            var map = new google.maps.Map(document.getElementById("map"),{
+                zoom: 7,
+                center: location
+            });
+
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map,
+                title: 'GolfDepots'
+                });
+        }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBNJZiDyVh5iNX-IYQgyiC-3OrW_W7h7os&callback=initMap">  </script>
+
+<br />
+<br />
+
+<email address ="matera.3@osu.edu" content="Email us"></email>

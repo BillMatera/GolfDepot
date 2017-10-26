@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/site.css" rel="stylesheet" />
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Josefin+Sans">
+        <script src="https://use.fontawesome.com/e1efa10af5.js"></script>
+    <title>Golf</title>
+</head>
+<body style="background: radial-gradient(#808080, #e6e6e6); font-family: 'Josefin Sans', sans-serif;">
+    @*@await Html.PartialAsync("Carousel")*@
+    <div style="height: 250px;  min-width: 100%;  width: 100%;  max-width: 100%; display: block;">
+        <img class="slide-image" src="~/Images/c1.png" alt=""style="height: 250px;  min-width: 100%;  width: 100%;  max-width: 100%; display: block;">
+    </div>
+    <nav class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" asp-controller ="Home" asp-action="Index">GolfDepot</a>
+        <div class="container">
+            <div class="navbar-header">
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>*@
+            </div>
+            <div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a asp-controller="Home" asp-action="Index"> Home </a></li>
+                    @await Component.InvokeAsync("CategoryMenu")
+                    <li><a asp-controller="Contact" asp-action="Index"> About Us </a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @await Component.InvokeAsync("ShoppingCartSummary")
+                    @await Html.PartialAsync("LoginPartial")
+                </ul>
+            </div>
+        </div>
+    </nav>           
+    <div class="container body-content" >
+        @RenderBody()
+        <hr/>
+        <footer>
+            <p><a target="_blank" href="https://github.com/etrupia"&copy; 2017 ng- ok></a></p>
+        </footer>
+    </div>
+</body>
+</html>
